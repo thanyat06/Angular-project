@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StudentService, StudentRec } from '../../service/student';
 
 @Component({
   selector: 'app-registration',
@@ -17,27 +18,21 @@ export class Registration {
   department = '';
   email = '';
 
-  constructor(private router: Router) {}
+  constructor(
+    private studentRec: StudentService,
+    private router: Router
+  ) {}
 
   registerStudent() {
-    const student = {
+    const student: StudentRec = {
       id: Date.now(),
       name: this.studentName,
-      age: this.studentAge,
+      age: this.studentAge ?? 0,
       department: this.department,
       email: this.email
     };
 
-    const students = JSON.parse(
-      localStorage.getItem('students') || '[]'
-    );
-
-    students.push(student);
-
-    localStorage.setItem(
-      'students',
-      JSON.stringify(students)
-    );
+    this.studentRec.addStudent(student);
 
     alert('Student registered successfully!');
 
