@@ -1,1 +1,40 @@
-<p>registration works!</p>
+
+<div class="student-card">
+
+  <h2>Student Registration</h2>
+
+  <form #studentForm="ngForm"
+        (ngSubmit)="registerStudent()">
+
+    <label>Student Name</label>
+    <input type="text"
+           name="studentName"
+           [(ngModel)]="studentName"
+           required>
+
+    <label>Age</label>
+    <input type="number"
+           name="studentAge"
+           [(ngModel)]="studentAge"
+           required>
+
+    <label>Department</label>
+    <input type="text"
+           name="department"
+           [(ngModel)]="department"
+           required>
+
+    <label>Email</label>
+    <input type="email"
+           name="email"
+           [(ngModel)]="email"
+           required>
+
+    <button type="submit"
+            [disabled]="studentForm.invalid">
+      Register Student
+    </button>
+
+  </form>
+
+</div>
