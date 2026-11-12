@@ -1,0 +1,27 @@
+
+header {
+  background-color: #222;
+  color: white;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a.active {
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+main {
+  padding: 20px;
+}
