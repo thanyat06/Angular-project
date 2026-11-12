@@ -1,11 +1,12 @@
 
 import { Component, OnInit } from '@angular/core';
 import { StudentService, StudentRec } from '../../service/student';
+import { StudentCard } from '../student-card/student-card';
 
 @Component({
   selector: 'app-student-list',
   standalone: true,
-  imports: [],
+  imports: [StudentCard],
   templateUrl: './student-list.html',
   styleUrl: './student-list.css'
 })

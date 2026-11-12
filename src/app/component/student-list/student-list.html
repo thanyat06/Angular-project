@@ -3,29 +3,12 @@
 
 @if (students.length > 0) {
 
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Department</th>
-        <th>Email</th>
-      </tr>
-    </thead>
+  @for (student of students; track student.id) {
 
-    <tbody>
-      @for (student of students; track student.id) {
-        <tr>
-          <td>{{ student.id }}</td>
-          <td>{{ student.name }}</td>
-          <td>{{ student.age }}</td>
-          <td>{{ student.department }}</td>
-          <td>{{ student.email }}</td>
-        </tr>
-      }
-    </tbody>
-  </table>
+    <app-student-card [student]="student">
+    </app-student-card>
+
+  }
 
 } @else {
   <p>No students registered yet.</p>
